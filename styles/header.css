@@ -1,0 +1,24 @@
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    z-index: 0;
+    background-image: url("../assets/img/capa.png");
+    background-position: center;
+    background-size: cover;
+    height: 700px;
+    
+}
+nav{
+    background-color: rgba(0,0,0,0.7);
+    height: 100%;
+}
+.cabecalho{
+    display: flex;
+    height: 100%;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-left: 2rem;
+}
+

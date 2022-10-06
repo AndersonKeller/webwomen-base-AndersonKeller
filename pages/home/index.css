@@ -1,1 +1,53 @@
 /* Desenvolva sua estilização aqui... */
+.ul-jobs{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 95%;
+}
+.li-jobs{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background-color: var(--color-grey-6);
+    border-radius: var(--radius-1);
+    gap: 1.5rem;
+}
+.li-jobs > h3{
+    width: 100%;
+}
+.div-infos-job{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+.li-jobs span{
+   display: block;
+}
+.li-jobs .tag{
+    padding: 0.25rem 1rem;
+    background-color: var(--color-grey-3);
+    border-radius: var(--radius-1);
+    max-width: max-content;
+}
+.title-ul{
+    margin-top: 2rem;
+}
+
+.li-selected-jobs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    border-bottom: 1px solid var(--color-grey-5);
+    padding: 2rem;
+}
+.li-selected-jobs > p{
+    width: 80%;
+}
+
+.li-selected-jobs:hover{
+    background-color: var(--color-grey-3);
+}

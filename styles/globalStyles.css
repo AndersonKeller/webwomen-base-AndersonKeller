@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  list-style: none;
 }
 
 img {
@@ -31,10 +32,14 @@ img {
   --text-1:  1.125rem;
   --text-2:  1rem;
   --text-3:  0.875rem;
+
+  --radius-1: 8px;
 }
 
 body {
   font-family: "Poppins", sans-serif;
+  color: var(--color-grey-1);
+  background-color: var(--color-grey-5);
 }
 
 .container {
@@ -43,6 +48,10 @@ body {
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 100vh;
 }
 
 @media(max-width: 991px){
@@ -52,4 +61,41 @@ body {
     --title-3: calc(2rem / 1.2);
     --text-1:  calc(1.125rem / 1.2);
   }
+  
+}
+@media (min-width: 769px){
+  .container{
+    padding: 2rem !important;
+    position: relative !important;
+  }
+  aside{
+    
+    position: absolute !important;
+    top: 6rem;
+    right: 0;
+    max-width: 30% !important;
+  }
+  .ul-jobs{
+    max-width: 70% !important;
+  }
+  nav{
+    padding: 2rem !important;
+  }
+  .btn-candidate{
+    max-width: max-content !important;
+  }
+ .div-infos-job{
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-direction: row !important;
+ }
+ .btn-header{
+  max-width: max-content !important;
+ }
+ .cabecalho{
+  flex-direction: column !important;
+ }
+ 
 }

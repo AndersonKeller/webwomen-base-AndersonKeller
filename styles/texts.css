@@ -1,0 +1,26 @@
+.title-1{
+    font-size: var(--title-1);
+    color: var(--color-grey-3);
+    font-weight: 600;
+}
+.text-2{
+    font-size: var(--text-2);
+    font-weight: 500;
+    line-height: 32px;
+}
+.p-header{
+    color: var(--color-grey-6);
+}
+.title-4{
+    font-size: var(--title-4);
+    font-weight: 600;
+}
+.text-3{
+    font-size: var(--text-3);
+    font-weight: 400;
+    
+}
+.title-5{
+    font-size: var(--title-5);
+    font-weight: 600;
+}

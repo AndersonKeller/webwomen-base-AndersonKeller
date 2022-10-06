@@ -1,0 +1,32 @@
+aside{
+    background-color: var(--color-grey-6);
+    
+    margin-top: 2rem;
+    border-radius: var(--radius-1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 95%;
+    height: max-content;
+}
+aside div{
+    background-color: var(--color-grey-4);
+    height: 1rem;
+    
+    border-radius: var(--radius-1);
+}
+aside h2{
+    padding-left: 2rem;
+}
+.div-1{
+    width: 60%;
+}
+.div-2{
+    width: 90%;
+}
+.div-3, .div-4{
+    width: 30%;
+}
+.div-5{
+    width: 20%;
+}
