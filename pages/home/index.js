@@ -1,7 +1,7 @@
 /* Desenvolva sua lógica aqui... */
 
 const favJobs = [];
-const text = ["Candidatar","Remover candidatrua"];
+const text = ["Candidatar","Remover candidatura"];
 
 verifyFavJobs()
 
@@ -52,8 +52,11 @@ function eventFavJob(){
                         btn.innerText = text[0];
                         favJobs.splice(jobsData[id],1);
                         localStorage.setItem("favJob",JSON.stringify(favJobs));
+                        console.log(favJobs.length);
+                       
                         renderFavJobs()
                     }
+                    
                     
                 }
            })
@@ -88,36 +91,52 @@ function renderFavJobs(){
       </li>`
         )
         })
-        eventTrashButton()
+       
     }
+    eventTrashButton()
 }
 function eventTrashButton(){
+   
     const btnTrash = document.querySelectorAll(".btn-remove");
         btnTrash.forEach((e)=>{
+            
             e.addEventListener("click",(f)=>{
                 
-                favJobs.splice(favJobs[f.id],1);
-                localStorage.setItem("favJob",JSON.stringify(favJobs))
-                renderFavJobs();
                 const btnFav = document.querySelectorAll(".btn-candidate");
-                if(btnFav.id == f.id){
-                    if(btnFav.innerText == "Candidatar"){
-                        btnFav.innerText = text[0];
-                       renderJobs();
-                      
-                    }else{
-                        btnFav.innerText = text[1];
-                        renderJobs();
+                btnFav.forEach((btn)=>{
+                    
+                    if(btn.id == e.id){
+                        favJobs.splice(favJobs[e],1);
+                        if(favJobs.length==0){
+                            localStorage.removeItem("favJob")
+                        }
+                        localStorage.setItem("favJob",JSON.stringify(favJobs));
+                        console.log(btn.innerText)
+                        if(btn.innerText == "Candidatar"){
+                            jobsData[e.id].textBtn = text[1];
+                            console.log(btn)
+                            renderFavJobs();
+                           renderJobs();
+                          
+                        }else{
+                            jobsData[e.id].textBtn = text[0];
+                            console.log(btn)
+                            renderFavJobs();
+                            renderJobs();
+                        }
                     }
-                }
-            })
-        })
+                })
+               
+            });
+            
+        });
+       
     }
 function verifyFavJobs(){
     
    
    let favJobJSON = JSON.parse(localStorage.getItem("favJob"));
-   console.log(favJobJSON)
+   
    
     if(favJobJSON){
       favJobJSON.forEach((e)=>{
@@ -135,5 +154,5 @@ function verifyFavJobs(){
        
     })
     renderJobs();
-    renderFavJobs();
+   renderFavJobs();
 }
